@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>FinAI — Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .dash-layout { padding: 100px 2rem; max-width: 1000px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .card { background: var(--surface); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+    h3 { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 2rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo"><div class="logo-icon">₹</div>Fin<span>AI</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/dashboard" class="active">Dashboard</a></li>
+    <li><a href="/chat">Chat</a></li>
+  </ul>
+</nav>
+<div class="dash-layout">
+  <div class="section-label">Overview</div>
+  <h1>Financial <span class="gradient-text">Snapshot</span></h1>
+  
+  <div class="grid">
+    <div class="card"><h3>PORTFOLIO</h3><h2>₹1,24,500</h2></div>
+    <div class="card"><h3>EXPENSES</h3><h2>₹32,100</h2></div>
+    <div class="card"><h3>EMERGENCY</h3><h2>₹80,000</h2></div>
+  </div>
+  
+  <div class="card" style="margin-top: 2rem;">
+    <h3>PORTFOLIO GROWTH</h3>
+    <canvas id="chart" height="100"></canvas>
+  </div>
+</div>
+<script>
+  new Chart(document.getElementById('chart').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{ label: 'Value (₹)', data: [95000, 102000, 98000, 110000, 115000, 124500], borderColor: '#00d4aa', backgroundColor: 'rgba(0,212,170,0.1)', fill: true }]
+    },
+    options: { responsive: true }
+  });
+</script>
+</body>
+</html>

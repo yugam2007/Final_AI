@@ -1,0 +1,12 @@
+{
+  "name": "ai-finance-advisor",
+  "version": "1.0.0",
+  "description": "AI Finance Advisor - IPT College Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
